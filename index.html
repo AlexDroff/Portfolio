@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Web Studio for website creation" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+      integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Portfolio(m3)</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Портфолио Графического Дизайнера</h1>
+      <p>
+        Краткий абзац обо мне: здесь вы можете написать кто вы, ваш опыт и
+        специализацию.
+      </p>
+    </header>
+
+    <main>
+      <div class="nav">
+        <a href="./skill.html">Навыки</a>
+      </div>
+
+      <section>
+        <h2>Проекты</h2>
+        <div class="case-grid">
+          <!-- Повторяющийся блок кейсов -->
+          <div class="case-item">
+            <div class="case-thumb">
+              <a href="./vizitki.html" >
+                <img src="./images/thumb_vizitki.svg" alt="">
+              </a>
+            </div>
+            <div class="case-title">Название проекта 1</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+          <div class="case-item">
+            <div class="case-thumb"></div>
+            <div class="case-title">Название проекта 2</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+          <div class="case-item">
+            <div class="case-thumb"></div>
+            <div class="case-title">Название проекта 3</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+          <div class="case-item">
+            <div class="case-thumb"></div>
+            <div class="case-title">Название проекта 4</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+          <div class="case-item">
+            <div class="case-thumb"></div>
+            <div class="case-title">Название проекта 5</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+          <div class="case-item">
+            <div class="case-thumb"></div>
+            <div class="case-title">Название проекта 6</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+          <div class="case-item">
+            <div class="case-thumb"></div>
+            <div class="case-title">Название проекта 7</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+          <div class="case-item">
+            <div class="case-thumb"></div>
+            <div class="case-title">Название проекта 8</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+          <div class="case-item">
+            <div class="case-thumb"></div>
+            <div class="case-title">Название проекта 9</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+          <div class="case-item">
+            <div class="case-thumb"></div>
+            <div class="case-title">Название проекта 10</div>
+            <p>Описание или задача проекта.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 Ваше имя. Все права защищены.</footer>
+
+<script>
+  document.querySelectorAll('.slider-container').forEach((container) => {
+    const track = container.querySelector('.slider-images');
+    const slides = container.querySelectorAll('img');
+    const prev = container.querySelector('.prev');
+    const next = container.querySelector('.next');
+    let index = 0;
+
+    const updateSlider = () => {
+      const slideWidth = slides[0].clientWidth;
+      track.style.transform = `translateX(-${index * slideWidth}px)`;
+    };
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    });
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    });
+
+    // Resize handler in case of responsive layout
+    window.addEventListener('resize', updateSlider);
+  });
+</script>
+
+  </body>
+</html>
