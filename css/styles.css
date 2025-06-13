@@ -83,12 +83,6 @@ section {
   justify-content: center;
   gap: 16px;
 }
-.header-icon-cont {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
 .header-link {
   font-weight: 400;
   font-size: 16px;
@@ -107,8 +101,8 @@ section {
 .header-link:focus {
   color: #2805f1;
 }
-.header-icon-cont:hover .header-icon,
-.header-icon-cont:focus .header-icon {
+.header-icon:hover,
+.header-icon:focus {
   fill: #2805f1;
 }
 
