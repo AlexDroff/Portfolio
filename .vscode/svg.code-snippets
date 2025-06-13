@@ -1,0 +1,13 @@
+{
+  "svg": {
+    "scope": "html",
+    "prefix": "svg",
+    "body": [
+      "<svg class=\"$2\" width=\"$3\" height=\"$4\">",
+      "  <use href=\"$1\"></use>",
+      "</svg>"
+    ],
+    "description": "SVG In HTML"
+  }
+  // }
+}
