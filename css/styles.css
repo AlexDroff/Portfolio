@@ -44,7 +44,7 @@ img {
   background-size: cover;
   width: 100%;
   max-width: 1440px;
-  background-image: url(../images/header_new.png);
+  background-image: url(../images/header.png);
   display: block;
   margin: 0 auto;
   padding-bottom: 0;
@@ -126,7 +126,6 @@ img {
 }
 .skill-list-cover {
   display: flex;
-  align-items: flex-start;
   gap: 40px;
 }
 .sidebar {
@@ -145,7 +144,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 16px;
 }
 .nav-btn {
   padding: 8px 12px;
@@ -233,6 +232,7 @@ img {
   display: block;
   object-fit: contain;
   flex-shrink: 0;
+  overflow: hidden;
 }
 .slider-button {
   position: absolute;
@@ -256,7 +256,9 @@ img {
 
 /* #region footer */
 .footer {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   height: 50px;
   background-color: #23376c;
   display: flex;
@@ -271,6 +273,73 @@ img {
 }
 
 /* #endregion footer */
+
+/* #region tablet 768px */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .heder-title,
+  .heder-subtitle,
+  .heder-text {
+    text-align: center;
+  }
+
+  .heder-title {
+    font-size: 38px;
+  }
+
+  .heder-subtitle {
+    font-size: 26px;
+  }
+
+  .heder-text {
+    font-size: 16px;
+  }
+
+  .header-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .skill .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .skill-list-cover {
+    gap: 20px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+  }
+  .nav-btn {
+    font-size: 12px;
+    padding: 8px 10px;
+    text-align: center;
+    width: 100%;
+  }
+  .case-grid {
+    gap: 30px;
+  }
+  .case-item {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* #endregion tablet 768px */
 
 /* #region mobile 320px */
 @media screen and (max-width: 480px) {
@@ -334,14 +403,20 @@ img {
   }
 
   .nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    padding: 0 10px;
+    width: 100%;
   }
 
   .nav-btn {
-    font-size: 10px;
-    padding: 6px 10px;
+    font-size: 12px;
+    padding: 8px 10px;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+    width: 100%;
   }
 
   .case-grid {
