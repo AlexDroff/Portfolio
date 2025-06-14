@@ -120,18 +120,21 @@ img {
 .skill-text {
   font-weight: 400;
   font-size: 18px;
-  max-width: 510px;
+  max-width: 500px;
   margin-bottom: 40px;
   line-height: 1.3;
 }
 .skill-list-cover {
   display: flex;
+  align-items: stretch;
   gap: 40px;
 }
 .sidebar {
   width: 80px;
-  height: 540px;
   background-color: #23376c;
+}
+.skil-item:last-child .skill-text {
+  margin-bottom: 0;
 }
 /* #endregion skills */
 
@@ -320,6 +323,9 @@ img {
   .sidebar {
     display: none;
   }
+  .nav {
+    display: none;
+  }
 
   .nav-list {
     flex-wrap: wrap;
@@ -395,6 +401,10 @@ img {
 
   .sidebar {
     display: none;
+  }
+
+  .nav {
+    display: flex;
   }
 
   .skill-text {
