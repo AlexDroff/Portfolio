@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <!-- #region head -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,156 +21,81 @@
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Portfolio</title>
   </head>
+  <!-- #endregion head -->
+
   <body>
+    <!-- #region header -->
     <header class="header">
-      <div class="container header-container">
-        <div class="header-info">
-          <h1 class="header-title">Oleksandr Aleksandrov</h1>
-          <p class="header-subtitle">Design | Print | Development</p>
-          <p class="header-text">
-            Experienced web designer and DTP specialist entering the world of
-            full-stack development
-          </p>
-          <button class="burger-btn" type="button" data-menu-open>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
+      <div class="header-photo-con">
+        <img class="header-photo" src="./images/header-desk.png" alt="photo" />
+      </div>
+      <div class="header-contacts-con">
+        <h1 class="header-title">Oleksandr Aleksandrov</h1>
+        <p class="header-subtitle">Design | Print | Development</p>
+        <p class="header-text">
+          Experienced web designer and DTP specialist entering the world of
+          full-stack development
+        </p>
+        <button class="burger-btn" type="button" data-menu-open>
+          <svg class="burger-icon" width="32" height="32">
+            <use href="./images/icon.svg#icon-burger"></use>
+          </svg>
+        </button>
+        <ul class="header-list">
+          <li class="header-item">
+            <a class="header-link" href="mailto:alldroff@gmail.com">
+              <div class="header-icon-container">
+                <svg class="header-icon" width="32" height="32">
+                  <use href="./images/icon.svg#icon-email"></use>
+                </svg>
+              </div>
+              <span class="header-link-text">alldroff@gmail.com</span>
+            </a>
+          </li>
+          <li class="header-item">
+            <a
+              class="header-link"
+              href="https://www.linkedin.com/in/oleksandr-aleksandov/"
+              target="_blank"
             >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M3.59961 6.00078C3.59961 5.68252 3.72604 5.3773 3.95108 5.15225C4.17612 4.92721 4.48135 4.80078 4.79961 4.80078H19.1996C19.5179 4.80078 19.8231 4.92721 20.0481 5.15225C20.2732 5.3773 20.3996 5.68252 20.3996 6.00078C20.3996 6.31904 20.2732 6.62427 20.0481 6.84931C19.8231 7.07435 19.5179 7.20078 19.1996 7.20078H4.79961C4.48135 7.20078 4.17612 7.07435 3.95108 6.84931C3.72604 6.62427 3.59961 6.31904 3.59961 6.00078Z"
-                fill="#E3E3E3"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M3.59961 6.00078C3.59961 5.68252 3.72604 5.3773 3.95108 5.15225C4.17612 4.92721 4.48135 4.80078 4.79961 4.80078H19.1996C19.5179 4.80078 19.8231 4.92721 20.0481 5.15225C20.2732 5.3773 20.3996 5.68252 20.3996 6.00078C20.3996 6.31904 20.2732 6.62427 20.0481 6.84931C19.8231 7.07435 19.5179 7.20078 19.1996 7.20078H4.79961C4.48135 7.20078 4.17612 7.07435 3.95108 6.84931C3.72604 6.62427 3.59961 6.31904 3.59961 6.00078Z"
-                fill="url(#pattern0_33_345)"
-                fill-opacity="0.2"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M3.59961 12.0008C3.59961 11.6825 3.72604 11.3773 3.95108 11.1523C4.17612 10.9272 4.48135 10.8008 4.79961 10.8008H19.1996C19.5179 10.8008 19.8231 10.9272 20.0481 11.1523C20.2732 11.3773 20.3996 11.6825 20.3996 12.0008C20.3996 12.319 20.2732 12.6243 20.0481 12.8493C19.8231 13.0744 19.5179 13.2008 19.1996 13.2008H4.79961C4.48135 13.2008 4.17612 13.0744 3.95108 12.8493C3.72604 12.6243 3.59961 12.319 3.59961 12.0008Z"
-                fill="#E3E3E3"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M3.59961 12.0008C3.59961 11.6825 3.72604 11.3773 3.95108 11.1523C4.17612 10.9272 4.48135 10.8008 4.79961 10.8008H19.1996C19.5179 10.8008 19.8231 10.9272 20.0481 11.1523C20.2732 11.3773 20.3996 11.6825 20.3996 12.0008C20.3996 12.319 20.2732 12.6243 20.0481 12.8493C19.8231 13.0744 19.5179 13.2008 19.1996 13.2008H4.79961C4.48135 13.2008 4.17612 13.0744 3.95108 12.8493C3.72604 12.6243 3.59961 12.319 3.59961 12.0008Z"
-                fill="url(#pattern1_33_345)"
-                fill-opacity="0.2"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M3.59961 18.0008C3.59961 17.6825 3.72604 17.3773 3.95108 17.1523C4.17612 16.9272 4.48135 16.8008 4.79961 16.8008H19.1996C19.5179 16.8008 19.8231 16.9272 20.0481 17.1523C20.2732 17.3773 20.3996 17.6825 20.3996 18.0008C20.3996 18.319 20.2732 18.6243 20.0481 18.8493C19.8231 19.0744 19.5179 19.2008 19.1996 19.2008H4.79961C4.48135 19.2008 4.17612 19.0744 3.95108 18.8493C3.72604 18.6243 3.59961 18.319 3.59961 18.0008Z"
-                fill="#E3E3E3"
-              />
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M3.59961 18.0008C3.59961 17.6825 3.72604 17.3773 3.95108 17.1523C4.17612 16.9272 4.48135 16.8008 4.79961 16.8008H19.1996C19.5179 16.8008 19.8231 16.9272 20.0481 17.1523C20.2732 17.3773 20.3996 17.6825 20.3996 18.0008C20.3996 18.319 20.2732 18.6243 20.0481 18.8493C19.8231 19.0744 19.5179 19.2008 19.1996 19.2008H4.79961C4.48135 19.2008 4.17612 19.0744 3.95108 18.8493C3.72604 18.6243 3.59961 18.319 3.59961 18.0008Z"
-                fill="url(#pattern2_33_345)"
-                fill-opacity="0.2"
-              />
-              <defs>
-                <pattern
-                  id="pattern0_33_345"
-                  patternContentUnits="objectBoundingBox"
-                  width="1"
-                  height="1"
-                >
-                  <use
-                    xlink:href="#image0_33_345"
-                    transform="matrix(0.000892857 0 0 0.00625 0.428571 0)"
-                  />
-                </pattern>
-                <pattern
-                  id="pattern1_33_345"
-                  patternContentUnits="objectBoundingBox"
-                  width="1"
-                  height="1"
-                >
-                  <use
-                    xlink:href="#image0_33_345"
-                    transform="matrix(0.000892858 0 0 0.00625 0.428571 0)"
-                  />
-                </pattern>
-                <pattern
-                  id="pattern2_33_345"
-                  patternContentUnits="objectBoundingBox"
-                  width="1"
-                  height="1"
-                >
-                  <use
-                    xlink:href="#image0_33_345"
-                    transform="matrix(0.000892858 0 0 0.00625 0.428571 0)"
-                  />
-                </pattern>
-                <image
-                  id="image0_33_345"
-                  width="160"
-                  height="160"
-                  preserveAspectRatio="none"
-                  xlink:href="data:image/png;base64,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"
-                />
-              </defs>
-            </svg>
-          </button>
-          <img class="header-photo" src="./images/header-mob.png" alt="photo" />
-          <ul class="header-list">
-            <li class="header-item">
-              <svg class="header-icon" width="24" height="24">
-                <use href="./images/icon.svg#icon-envelop"></use>
-              </svg>
-              <a class="header-link" href="mailto:alldroff@gmail.com"
-                >alldroff@gmail.com</a
-              >
-            </li>
-            <li class="header-item">
-              <svg class="header-icon" width="24" height="24">
-                <use href="./images/icon.svg#icon-linkedin"></use>
-              </svg>
-              <a
-                class="header-link"
-                href="https://www.linkedin.com/in/oleksandr-aleksandov/"
-                target="_blank"
-              >
-                LinkedIn
-              </a>
-            </li>
-            <li class="header-item">
-              <svg class="header-icon" width="24" height="24">
-                <use href="./images/icon.svg#icon-phone"></use>
-              </svg>
-              <a class="header-link" href="tel:+48730394040"
-                >+48 730-39-40-40</a
-              >
-            </li>
-            <li class="header-item">
-              <svg class="header-icon" width="24" height="24">
-                <use href="./images/icon.svg#icon-download"></use>
-              </svg>
-              <a
-                class="header-link"
-                href="https://github.com/AlexDroff/Portfolio/tree/main/pdf/CV_Oleksandr_Aleksandrov.pdf"
-                target="_blank"
-                download
-              >
-                Download CV
-              </a>
-            </li>
-          </ul>
-        </div>
+              <div class="header-icon-container">
+                <svg class="header-icon" width="32" height="32">
+                  <use href="./images/icon.svg#icon-linkedin"></use>
+                </svg>
+              </div>
+              <span class="header-link-text">LinkedIn</span>
+            </a>
+          </li>
+          <li class="header-item">
+            <a class="header-link" href="tel:+48730394040">
+              <div class="header-icon-container">
+                <svg class="header-icon" width="32" height="32">
+                  <use href="./images/icon.svg#icon-phone"></use>
+                </svg>
+              </div>
+              <span class="header-link-text">+48 730-39-40-40</span>
+            </a>
+          </li>
+          <li class="header-item">
+            <a
+              class="header-link"
+              href="https://raw.githubusercontent.com/AlexDroff/Portfolio/main/pdf/CV_Oleksandr_Aleksandrov.pdf"
+              target="_blank"
+            >
+              <div class="header-icon-container">
+                <svg class="header-icon" width="32" height="32">
+                  <use href="./images/icon.svg#icon-download"></use>
+                </svg>
+              </div>
+              <span class="header-link-text">View CV</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </header>
-    <!-- mobil menu -->
+    <!-- #endregion header -->
+
+    <!-- #region mobil-menu -->
     <div class="mobil-menu" data-menu>
       <div class="container mobil-menu-container">
         <button class="mobile-menu-close-btn" type="button" data-menu-close>
@@ -201,17 +127,11 @@
         </p>
         <ul class="mobil-menu-list">
           <li class="mobil-menu-item">
-            <svg class="icon icon-envelop">
-              <use xlink:href="#icon-envelop"></use>
-            </svg>
             <a class="mobil-menu-link" href="mailto:alldroff@gmail.com"
               >alldroff@gmail.com</a
             >
           </li>
           <li class="mobil-menu-item">
-            <svg class="mobil-menu-icon" width="16" height="16">
-              <use href="./images/icon.svg#icon-linkedin"></use>
-            </svg>
             <a
               class="mobil-menu-link"
               href="https://www.linkedin.com/in/oleksandr-aleksandov/"
@@ -221,17 +141,11 @@
             </a>
           </li>
           <li class="mobil-menu-item">
-            <svg class="mobil-menu-icon" width="16" height="16">
-              <use href="./images/icon.svg#icon-phone"></use>
-            </svg>
             <a class="mobil-menu-link" href="tel:+48730394040"
               >+48 730-39-40-40</a
             >
           </li>
           <li class="mobil-menu-item">
-            <svg class="header-icon" width="16" height="16">
-              <use href="./images/icon.svg#icon-download"></use>
-            </svg>
             <a
               class="mobil-menu-link"
               href="https://github.com/AlexDroff/Portfolio/tree/main/pdf/CV_Oleksandr_Aleksandrov.pdf"
@@ -244,15 +158,74 @@
         </ul>
       </div>
     </div>
+    <!-- #endregion mobil-menu -->
     <main>
-      <div class="photo-mob">
-        <p class="photo-mob-subtitle">Design | Print | Development</p>
-        <p class="photo-mob-text">
+      <!-- #region mobil-version -->
+      <section class="mobil-version">
+        <p class="mobil-version-subtitle">Design | Print | Development</p>
+        <p class="mobil-version-text">
           Experienced web designer and DTP specialist entering the world of
           full-stack development
         </p>
-        <img src="./images/header-mob.png" alt="photo" />
-      </div>
+        <img
+          class="mobil-version-photo"
+          src="./images/header-mob.png"
+          alt="photo"
+        />
+        <ul class="mobil-version-list">
+          <li class="mobil-version-item">
+            <a class="mobil-version-link" href="mailto:alldroff@gmail.com">
+              <div class="mobil-version-icon-container">
+                <svg class="mobil-version-icon" width="24" height="24">
+                  <use href="./images/icon.svg#icon-email"></use>
+                </svg>
+              </div>
+              <span class="mobil-version-link-text">alldroff@gmail.com</span>
+            </a>
+          </li>
+          <li class="mobil-version-item">
+            <a
+              class="mobil-version-link"
+              href="https://www.linkedin.com/in/oleksandr-aleksandov/"
+              target="_blank"
+            >
+              <div class="mobil-version-icon-container">
+                <svg class="mobil-version-icon" width="24" height="24">
+                  <use href="./images/icon.svg#icon-linkedin"></use>
+                </svg>
+              </div>
+              <span class="mobil-version-link-text">LinkedIn</span>
+            </a>
+          </li>
+          <li class="mobil-version-item">
+            <a class="mobil-version-link" href="tel:+48730394040">
+              <div class="mobil-version-icon-container">
+                <svg class="mobil-version-icon" width="24" height="24">
+                  <use href="./images/icon.svg#icon-phone"></use>
+                </svg>
+              </div>
+              <span class="mobil-version-link-text">+48 730-39-40-40</span>
+            </a>
+          </li>
+          <li class="mobil-version-item">
+            <a
+              class="mobil-version-link"
+              href="https://raw.githubusercontent.com/AlexDroff/Portfolio/main/pdf/CV_Oleksandr_Aleksandrov.pdf"
+              target="_blank"
+            >
+              <div class="mobil-version-icon-container">
+                <svg class="mobil-version-icon" width="24" height="24">
+                  <use href="./images/icon.svg#icon-download"></use>
+                </svg>
+              </div>
+              <span class="mobil-version-link-text">View CV</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- #endregion mobil-version -->
+
+      <!-- #region skills       -->
       <section class="skill">
         <div class="container skill-container">
           <div class="skill-list-cover">
@@ -332,6 +305,9 @@
           </div>
         </div>
       </section>
+      <!-- #endregion skills -->
+
+      <!-- #region project -->
       <section class="project">
         <div class="container project-container">
           <h2 class="project-title">My projects</h2>
@@ -339,58 +315,58 @@
             <ul class="nav-list">
               <li class="nav-item">
                 <a class="nav-btn" href="#busines card" role="button"
-                  >Business cards</a
+                  >business cards</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-btn" href="#booklet" role="button">Booklets</a>
+                <a class="nav-btn" href="#booklet" role="button">booklets</a>
               </li>
               <li class="nav-item">
                 <a class="nav-btn" href="#brand book" role="button"
-                  >Brand book</a
+                  >brand book</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-btn" href="#posters landscape" role="button"
-                  >Posters landscape</a
+                  >posters l</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-btn" href="#posters squared" role="button"
-                  >Posters squared</a
+                  >posters s</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-btn" href="#posters portrait" role="button"
-                  >Posters portrait</a
+                  >posters p</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-btn" href="#covers book" role="button"
-                  >Book covers</a
+                  >book covers</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-btn" href="#catalog zolotoi vek" role="button"
-                  >Catalog Zolotoi vek</a
+                  >catalog ZV</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-btn" href="#catalog euro stand" role="button"
-                  >Catalog Euro-stand</a
+                  >Catalog ES</a
                 >
               </li>
               <li class="nav-item">
                 <a class="nav-btn" href="#catalog arles" role="button"
-                  >Catalog Arles</a
+                  >Catalog A</a
                 >
               </li>
             </ul>
           </div>
-          <div class="case-grid">
+          <div class="slider">
             <!-- busines card -->
-            <div class="case-item" id="busines card">
-              <div class="case-thumb">
+            <div class="slider-item" id="busines card">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -438,11 +414,11 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Business cards</h4>
+              <h4 class="slider-title">Business cards</h4>
             </div>
             <!-- booklet -->
-            <div class="case-item" id="booklet">
-              <div class="case-thumb">
+            <div class="slider-item" id="booklet">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -490,11 +466,11 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Booklets</h4>
+              <h4 class="slider-title">Booklets</h4>
             </div>
             <!-- brand book -->
-            <div class="case-item" id="brand book">
-              <div class="case-thumb">
+            <div class="slider-item" id="brand book">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -590,11 +566,11 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Brand book</h4>
+              <h4 class="slider-title">Brand book</h4>
             </div>
             <!-- posters landscape -->
-            <div class="case-item" id="posters landscape">
-              <div class="case-thumb">
+            <div class="slider-item" id="posters landscape">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -650,11 +626,11 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Posters landscape</h4>
+              <h4 class="slider-title">Posters landscape</h4>
             </div>
             <!-- posters squared -->
-            <div class="case-item" id="posters squared">
-              <div class="case-thumb">
+            <div class="slider-item" id="posters squared">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -702,11 +678,11 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Posters squared</h4>
+              <h4 class="slider-title">Posters squared</h4>
             </div>
             <!-- posters portrait -->
-            <div class="case-item" id="posters portrait">
-              <div class="case-thumb">
+            <div class="slider-item" id="posters portrait">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -890,12 +866,12 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Posters portrait</h4>
+              <h4 class="slider-title">Posters portrait</h4>
             </div>
 
             <!-- covers book -->
-            <div class="case-item" id="covers book">
-              <div class="case-thumb">
+            <div class="slider-item" id="covers book">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -991,11 +967,11 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Book covers</h4>
+              <h4 class="slider-title">Book covers</h4>
             </div>
             <!-- catalog zolotoi vek -->
-            <div class="case-item" id="catalog zolotoi vek">
-              <div class="case-thumb">
+            <div class="slider-item" id="catalog zolotoi vek">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -1083,11 +1059,11 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Catalog «Zolotoi vek»</h4>
+              <h4 class="slider-title">Catalog «Zolotoi vek»</h4>
             </div>
             <!-- catalog euro stand -->
-            <div class="case-item" id="catalog euro stand">
-              <div class="case-thumb">
+            <div class="slider-item" id="catalog euro stand">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -1159,11 +1135,11 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Catalog «Euro stand»</h4>
+              <h4 class="slider-title">Catalog «Euro stand»</h4>
             </div>
             <!-- catalog Arlesss -->
-            <div class="case-item" id="catalog arles">
-              <div class="case-thumb">
+            <div class="slider-item" id="catalog arles">
+              <div class="slider-thumb">
                 <div class="slider-container">
                   <button class="slider-button prev">&#10094;</button>
                   <div class="slider-images">
@@ -1331,19 +1307,23 @@
                   <button class="slider-button next">&#10095;</button>
                 </div>
               </div>
-              <h4 class="case-title">Catalog «ARLES»</h4>
+              <h4 class="slider-title">Catalog «ARLES»</h4>
             </div>
           </div>
         </div>
       </section>
+      <!-- #endregion project -->
     </main>
 
+    <!-- #region footer -->
     <footer class="footer">
       <p class="footer-text">
         &copy; 2025 Oleksandr Aleksandrov. All rights reserved.
       </p>
     </footer>
+    <!-- #endregion footer -->
 
+    <!-- #region script -->
     <script>
       document.querySelectorAll(".slider-container").forEach((container) => {
         const track = container.querySelector(".slider-images");
@@ -1374,5 +1354,6 @@
       });
     </script>
     <script src="./js/menu.js"></script>
+    <!-- #endregion script -->
   </body>
 </html>
