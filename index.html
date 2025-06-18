@@ -99,24 +99,8 @@
     <div class="mobil-menu" data-menu>
       <div class="container mobil-menu-container">
         <button class="mobile-menu-close-btn" type="button" data-menu-close>
-          <svg
-            width="8"
-            height="8"
-            viewBox="0 0 8 8"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_35_21)">
-              <path
-                d="M8 0.805714L7.19429 0L4 3.19429L0.805714 0L0 0.805714L3.19429 4L0 7.19429L0.805714 8L4 4.80571L7.19429 8L8 7.19429L4.80571 4L8 0.805714Z"
-                fill="#2E2F42"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_35_21">
-                <rect width="8" height="8" fill="white" />
-              </clipPath>
-            </defs>
+          <svg class="" width="24" height="24">
+            <use href="./images/icon.svg#icon-close"></use>
           </svg>
         </button>
         <h1 class="mobil-menu-title">Oleksandr Aleksandrov</h1>
@@ -127,9 +111,14 @@
         </p>
         <ul class="mobil-menu-list">
           <li class="mobil-menu-item">
-            <a class="mobil-menu-link" href="mailto:alldroff@gmail.com"
-              >alldroff@gmail.com</a
-            >
+            <a class="mobil-menu-link" href="mailto:alldroff@gmail.com">
+              <div class="mobil-menu-icon-container">
+                <svg class="mobil-menu-icon" width="24" height="24">
+                  <use href="./images/icon.svg#icon-email"></use>
+                </svg>
+              </div>
+              <span class="mobil-menu-link-text">alldroff@gmail.com</span>
+            </a>
           </li>
           <li class="mobil-menu-item">
             <a
@@ -137,22 +126,36 @@
               href="https://www.linkedin.com/in/oleksandr-aleksandov/"
               target="_blank"
             >
-              LinkedIn
+              <div class="mobil-menu-icon-container">
+                <svg class="mobil-menu-icon" width="24" height="24">
+                  <use href="./images/icon.svg#icon-linkedin"></use>
+                </svg>
+              </div>
+              <span class="mobil-menu-link-text">LinkedIn</span>
             </a>
           </li>
           <li class="mobil-menu-item">
-            <a class="mobil-menu-link" href="tel:+48730394040"
-              >+48 730-39-40-40</a
-            >
+            <a class="mobil-menu-link" href="tel:+48730394040">
+              <div class="mobil-menu-icon-container">
+                <svg class="mobil-menu-icon" width="24" height="24">
+                  <use href="./images/icon.svg#icon-phone"></use>
+                </svg>
+              </div>
+              <span class="mobil-menu-link-text">+48 730-39-40-40</span>
+            </a>
           </li>
           <li class="mobil-menu-item">
             <a
               class="mobil-menu-link"
-              href="https://github.com/AlexDroff/Portfolio/tree/main/pdf/CV_Oleksandr_Aleksandrov.pdf"
+              href="https://raw.githubusercontent.com/AlexDroff/Portfolio/main/pdf/CV_Oleksandr_Aleksandrov.pdf"
               target="_blank"
-              download
             >
-              Download CV
+              <div class="mobil-menu-icon-container">
+                <svg class="mobil-menu-icon" width="24" height="24">
+                  <use href="./images/icon.svg#icon-download"></use>
+                </svg>
+              </div>
+              <span class="mobil-menu-link-text">View CV</span>
             </a>
           </li>
         </ul>
