@@ -410,6 +410,9 @@ img {
   font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 24;
   color: #e1edf4;
 }
+.mobil-menu-icon {
+  fill: #e1edf4;
+}
 .mobil-menu-link-text {
   font-weight: 500;
   font-size: 16px;
@@ -419,6 +422,9 @@ img {
   display: flex;
   text-align: left;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.email {
+  font-size: 14px;
 }
 .mobil-menu-link:hover .mobil-menu-icon-container {
   background-color: #578ac7;
