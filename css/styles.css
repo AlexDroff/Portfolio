@@ -463,6 +463,9 @@ img {
   max-width: 280px;
   letter-spacing: -0.01em;
 }
+.close-btn {
+  fill: #23376c;
+}
 @media screen and (min-width: 768px) {
   .mobil-version {
     padding: 15px 0;
