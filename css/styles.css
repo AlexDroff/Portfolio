@@ -357,10 +357,13 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid #23376c;
   padding: 0;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-btn {
+  fill: #23376c;
 }
 .mobil-menu-title {
   font-weight: 600;
@@ -462,9 +465,6 @@ img {
   margin-bottom: 20px;
   max-width: 280px;
   letter-spacing: -0.01em;
-}
-.close-btn {
-  fill: #23376c;
 }
 @media screen and (min-width: 768px) {
   .mobil-version {
