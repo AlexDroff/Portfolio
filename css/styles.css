@@ -406,8 +406,9 @@ img {
   align-items: center;
   justify-content: center;
 }
-.mobil-menu-icon {
-  fill: #e1edf4;
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 24;
+  color: #e1edf4;
 }
 .mobil-menu-link-text {
   font-weight: 500;
