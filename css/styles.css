@@ -108,8 +108,10 @@ img {
   padding: 0;
   display: block;
 }
-.burger-icon {
-  fill: #e1edf4;
+.material-symbols-outlined {
+  display: block;
+  font-variation-settings: "FILL" 1, "wght" 700, "GRAD" 200, "opsz" 32;
+  color: #e1edf4;
 }
 @media screen and (min-width: 768px) {
   .burger-btn,
@@ -409,7 +411,7 @@ img {
 }
 .mobil-menu-link-text {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.66667;
   color: #23376c;
   font-style: normal;
