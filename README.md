@@ -1,4 +1,4 @@
-# Oleksandr Aleksandrov Portfolio
+# Portfolio - Oleksandr Aleksandrov
 
 ## Description
 Personal portfolio showcasing web development projects, skills, and experience. The portfolio highlights responsive and adaptive web applications built with modern JavaScript, React, and Node.js.
