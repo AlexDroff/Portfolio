@@ -1,0 +1,26 @@
+.section {
+  padding: var(--section-y-mobile) 0;
+  background: var(--color-surface-dark);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.links {
+  display: grid;
+  gap: var(--space-4);
+  align-items: start;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: var(--section-y) 0;
+  }
+
+  .links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
