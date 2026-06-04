@@ -13,7 +13,6 @@ export function WorkCategoriesSection() {
     <section className={styles.section} id="prace">
       <Container className={styles.inner}>
         <SectionHeader
-          eyebrow="Prace"
           title="Wybrane prace"
           description="Prace podzielone według typu projektu — od materiałów firmowych po publikacje, plakaty i identyfikację wizualną."
         />

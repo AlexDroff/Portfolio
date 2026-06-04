@@ -12,7 +12,6 @@ export function ExperienceSection({ items }: ExperienceSectionProps) {
     <section className={styles.section} id="doswiadczenie">
       <Container className={styles.inner}>
         <SectionHeader
-          eyebrow="Doświadczenie"
           title="Profil zawodowy"
           description="Startowy opis doświadczenia bez nazw firm i bez pozycjonowania web developerskiego."
         />

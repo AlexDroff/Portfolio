@@ -23,9 +23,7 @@ export function WorkCategoryCard({ category }: WorkCategoryCardProps) {
               sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 700px) 50vw, 100vw"
             />
           ) : (
-            <span className={styles.placeholder} aria-hidden="true">
-              Prace
-            </span>
+            <span className={styles.placeholder} aria-hidden="true" />
           )}
         </span>
         <span className={styles.content}>

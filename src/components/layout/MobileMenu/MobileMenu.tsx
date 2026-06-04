@@ -1,5 +1,4 @@
 import type { ContactLink } from "@/types/portfolio";
-import { IconLink } from "@/components/ui/IconLink/IconLink";
 import styles from "./MobileMenu.module.css";
 
 type MobileMenuProps = {
@@ -22,6 +21,8 @@ export function MobileMenu({
   onClose,
   profileName,
 }: MobileMenuProps) {
+  const cvLink = contacts.find((link) => link.type === "cv");
+
   return (
     <div
       className={[styles.overlay, isOpen ? styles.open : ""].filter(Boolean).join(" ")}
@@ -50,17 +51,17 @@ export function MobileMenu({
           </button>
         </div>
         <nav className={styles.nav} aria-label="Nawigacja mobilna">
+          {cvLink ? (
+            <a href={cvLink.href} onClick={onClose} rel="noopener noreferrer" target="_blank">
+              {cvLink.label}
+            </a>
+          ) : null}
           {navLinks.map((link) => (
             <a href={link.href} key={link.href} onClick={onClose}>
               {link.label}
             </a>
           ))}
         </nav>
-        <div className={styles.contacts}>
-          {contacts.map((link) => (
-            <IconLink className={styles.contactLink} key={link.id} {...link} />
-          ))}
-        </div>
       </aside>
     </div>
   );

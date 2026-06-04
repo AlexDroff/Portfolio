@@ -16,23 +16,13 @@ type HeroSectionProps = {
 export function HeroSection({ profile }: HeroSectionProps) {
   return (
     <section className={styles.section} id="o-mnie">
-      <Container>
+      <Container className={styles.introShell}>
         <div className={styles.intro}>
           <div className={styles.content}>
-            <p className={styles.eyebrow}>Portfolio graficzne i DTP</p>
             <h1>{profile.name}</h1>
-            <p className={styles.headline}>{profile.headline}</p>
             <p className={styles.summary}>{profile.summary}</p>
             <div className={styles.actions}>
               <Button href="#prace">Zobacz prace</Button>
-              <Button
-                href={profile.cvPath}
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="secondary"
-              >
-                Pobierz CV
-              </Button>
             </div>
           </div>
           <div className={styles.photo}>

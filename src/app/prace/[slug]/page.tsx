@@ -90,7 +90,6 @@ export default async function WorkCategoryPage({ params }: WorkCategoryPageProps
               Wróć do prac
             </Link>
             <div className={styles.heading}>
-              <p className={styles.kicker}>Portfolio</p>
               <h1>{category.title}</h1>
               <p className={styles.description}>{category.shortDescription}</p>
               {category.longDescription ? (

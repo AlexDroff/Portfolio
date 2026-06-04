@@ -15,9 +15,6 @@ type HeaderProps = {
 };
 
 const navLinks = [
-  { href: "#o-mnie", label: "O mnie" },
-  { href: "#kompetencje", label: "Kompetencje" },
-  { href: "#doswiadczenie", label: "Doświadczenie" },
   { href: "#prace", label: "Prace" },
   { href: "#kontakt", label: "Kontakt" },
 ];
