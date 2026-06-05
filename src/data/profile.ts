@@ -1,8 +1,8 @@
 export const profile = {
   name: "Oleksandr Aleksandrov",
-  headline: "Grafika, skład i przygotowanie do druku.",
+  headline: "Projektant graficzny i specjalista DTP",
   summary:
-    "Projektant graficzny i specjalista DTP z doświadczeniem w materiałach reklamowych, publikacjach, druku cyfrowym i przygotowaniu plików produkcyjnych.",
+    "z ponad 25-letnim doświadczeniem w projektowaniu materiałów reklamowych, składzie publikacji i przygotowaniu plików do druku. Pracuję z formatami od wizytówek i broszur po katalogi, plakaty i druk wielkoformatowy.",
   cvPath: "/pdf/CV_Oleksandr_Aleksandrov.pdf",
   desktopPhoto: "/my_photo.webp",
   mobilePhoto: "/my_photo.webp",

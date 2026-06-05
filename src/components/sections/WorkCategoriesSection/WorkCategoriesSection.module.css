@@ -1,14 +1,17 @@
 .section {
   padding: var(--section-y-mobile) 0;
-  background:
-    linear-gradient(180deg, var(--color-overlay-subtle), transparent),
-    var(--color-bg);
+  background: var(--color-brand-primary);
 }
 
 .inner {
   display: grid;
   gap: var(--space-6);
   min-width: 0;
+}
+
+.inner > header h2,
+.inner > header p {
+  color: var(--color-bg-primary);
 }
 
 .grid {
@@ -20,7 +23,7 @@
 .empty {
   max-width: 620px;
   margin: 0;
-  color: var(--color-text-secondary);
+  color: var(--color-bg-primary);
   line-height: 1.65;
 }
 

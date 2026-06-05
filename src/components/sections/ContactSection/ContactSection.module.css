@@ -1,17 +1,24 @@
 .section {
   padding: var(--section-y-mobile) 0;
-  background: var(--color-surface-dark);
+  background: var(--color-bg-primary);
 }
 
 .inner {
   display: grid;
   gap: var(--space-6);
+  justify-items: center;
+  text-align: center;
+}
+
+.inner > header {
+  justify-items: center;
 }
 
 .links {
   display: grid;
   gap: var(--space-4);
   align-items: start;
+  justify-items: center;
   min-width: 0;
 }
 

@@ -20,9 +20,12 @@ export function HeroSection({ profile }: HeroSectionProps) {
         <div className={styles.intro}>
           <div className={styles.content}>
             <h1>{profile.name}</h1>
-            <p className={styles.summary}>{profile.summary}</p>
+            <p className={styles.summary}>
+              <strong>{profile.headline}</strong>
+              <span className={styles.summaryText}>{profile.summary}</span>
+            </p>
             <div className={styles.actions}>
-              <Button href="#prace">Zobacz prace</Button>
+              <Button href="#prace">Zobacz moje projekty</Button>
             </div>
           </div>
           <div className={styles.photo}>

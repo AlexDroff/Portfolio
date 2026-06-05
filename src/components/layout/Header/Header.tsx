@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { ContactLink } from "@/types/portfolio";
 import { Container } from "@/components/ui/Container/Container";
 import { MobileMenu } from "@/components/layout/MobileMenu/MobileMenu";
+import { Button } from "@/components/ui/Button/Button";
 import styles from "./Header.module.css";
 
 type HeaderProps = {
@@ -57,6 +58,22 @@ export function Header({ profile, contacts }: HeaderProps) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img className={styles.logo} src="/logo.svg" alt="Oleksandr Aleksandrov" />
         </Link>
+        <div className={styles.actions}>
+          {cvLink ? (
+            <Button
+              className={styles.cvButton}
+              href={cvLink.href}
+              rel="noopener noreferrer"
+              target="_blank"
+              variant="secondary"
+            >
+              <svg className={styles.cvIcon} aria-hidden="true" focusable="false">
+                <use href="/icon.svg#icon-download" />
+              </svg>
+              <span>Pobierz CV</span>
+            </Button>
+          ) : null}
+        </div>
         <nav className={styles.nav} aria-label="Główna nawigacja">
           {navLinks.map((link) => (
             <a href={link.href} key={link.href}>
@@ -64,21 +81,6 @@ export function Header({ profile, contacts }: HeaderProps) {
             </a>
           ))}
         </nav>
-        <div className={styles.actions}>
-          {cvLink ? (
-            <a
-              className={styles.cvButton}
-              href={cvLink.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg className={styles.cvIcon} aria-hidden="true" focusable="false">
-                <use href="/icon.svg#icon-download" />
-              </svg>
-              <span>Pobierz CV</span>
-            </a>
-          ) : null}
-        </div>
         <button
           aria-controls="mobile-menu"
           aria-expanded="false"

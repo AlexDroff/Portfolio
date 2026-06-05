@@ -62,20 +62,6 @@ export function WorkGallery({ items }: WorkGalleryProps) {
                 <img src={item.src} alt={item.alt} loading="lazy" />
               </button>
             </div>
-            {(item.caption || item.tags?.length) ? (
-              <figcaption className={styles.caption}>
-                {item.caption ? <span className={styles.captionText}>{item.caption}</span> : null}
-                {item.tags?.length ? (
-                  <span className={styles.tags} aria-label="Tagi pracy">
-                    {item.tags.map((tag) => (
-                      <span className={styles.tag} key={tag}>
-                        {tag}
-                      </span>
-                    ))}
-                  </span>
-                ) : null}
-              </figcaption>
-            ) : null}
           </figure>
         ))}
       </div>

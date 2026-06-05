@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CompetenceCard } from "@/types/portfolio";
 import { Container } from "@/components/ui/Container/Container";
 import styles from "./CompetenceSection.module.css";
@@ -20,15 +20,15 @@ function CompetenceFlipCard({ card, isActive, onClose, onToggle }: CompetenceFli
   const buttonClassName = [styles.card, isActive ? styles.flipped : ""].filter(Boolean).join(" ");
   const cardContent = (
     <span className={styles.cardInner}>
-      <span className={styles.cardFace}>
+      <span className={[styles.cardFace, styles.cardFront].join(" ")}>
         <span className={styles.cardTitle}>{card.title}</span>
         <span className={styles.cardHint}>Kliknij →</span>
       </span>
       <span className={[styles.cardFace, styles.cardBack].join(" ")}>
         <span className={styles.cardTitle}>{card.title}</span>
-        <span className={styles.items}>
+        <span className={styles.items} role="list">
           {card.items.map((item) => (
-            <span className={styles.item} key={item}>
+            <span className={styles.item} key={item} role="listitem">
               {item}
             </span>
           ))}
@@ -64,6 +64,7 @@ function CompetenceFlipCard({ card, isActive, onClose, onToggle }: CompetenceFli
 
 export function CompetenceSection({ competences }: CompetenceSectionProps) {
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!activeCardId) {
@@ -75,11 +76,20 @@ export function CompetenceSection({ competences }: CompetenceSectionProps) {
         setActiveCardId(null);
       }
     };
+    const handlePointerDown = (event: PointerEvent) => {
+      if (cardsRef.current?.contains(event.target as Node)) {
+        return;
+      }
+
+      setActiveCardId(null);
+    };
 
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("pointerdown", handlePointerDown);
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("pointerdown", handlePointerDown);
     };
   }, [activeCardId]);
 
@@ -87,10 +97,13 @@ export function CompetenceSection({ competences }: CompetenceSectionProps) {
     <section className={styles.section} id="kompetencje">
       <Container className={styles.inner}>
         <header className={styles.header}>
-          <h2>Zakres pracy grafika DTP</h2>
-          <p>Bazowy podział umiejętności do dalszego dopracowania w projekcie docelowym.</p>
+          <h2>Umiejętności i sposób pracy</h2>
+          <p>
+            Narzędzia, techniki i procesy, z których korzystam przy projektowaniu materiałów
+            graficznych, składzie DTP, przygotowaniu plików do druku oraz współpracy z produkcją.
+          </p>
         </header>
-        <div className={styles.grid}>
+        <div className={styles.grid} ref={cardsRef}>
           {competences.map((card) => (
             <CompetenceFlipCard
               card={card}

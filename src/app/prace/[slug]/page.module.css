@@ -1,6 +1,6 @@
 .page {
   min-height: 100vh;
-  background: var(--color-bg);
+  background: var(--color-bg-primary);
 }
 
 .container {
@@ -13,9 +13,7 @@
 
 .hero {
   padding: var(--section-y-mobile) 0 var(--space-7);
-  background:
-    linear-gradient(180deg, rgba(17, 24, 32, 0.72), rgba(11, 15, 20, 0)),
-    var(--color-bg);
+  background: var(--color-bg-primary);
 }
 
 .backLink {
@@ -96,6 +94,7 @@
 
 .gallerySection {
   padding: 0 0 var(--section-y-mobile);
+  background: var(--color-bg-primary);
 }
 
 @media (min-width: 768px) {

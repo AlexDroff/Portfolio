@@ -17,18 +17,25 @@ export const competences: CompetenceCard[] = [
     id: "dtp-prepress",
     title: "DTP i prepress",
     items: [
-      "Spady",
-      "Marginesy",
+      "Spady i marginesy",
       "Formaty netto/brutto",
       "Eksport PDF",
       "Kontrola plików",
+      "Przygotowanie do druku",
       "Wymagania drukarni",
     ],
   },
   {
     id: "scope",
-    title: "Zakres prac",
-    items: ["Wizytówki", "Ulotki", "Katalogi", "Plakaty", "Banery", "Publikacje"],
+    title: "Zakres projektów",
+    items: [
+      "Wizytówki",
+      "Ulotki i broszury",
+      "Katalogi",
+      "Okładki książek",
+      "Plakaty",
+      "Banery i roll-upy",
+    ],
   },
   {
     id: "production",
@@ -36,7 +43,7 @@ export const competences: CompetenceCard[] = [
     items: [
       "Druk cyfrowy",
       "Druk wielkoformatowy",
-      "Przygotowanie produkcyjne",
+      "Pliki produkcyjne",
       "Kontrola jakości",
       "Obsługa zleceń",
       "Współpraca z produkcją",
