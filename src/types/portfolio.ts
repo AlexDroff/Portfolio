@@ -40,4 +40,16 @@ export type WorkCategory = {
   status: WorkCategoryStatus;
   tags: string[];
   items: WorkItem[];
+  subcategories?: WorkSubcategory[];
+};
+
+export type WorkSubcategory = {
+  slug: string;
+  title: string;
+  shortDescription: string;
+  longDescription?: string;
+  coverImage: string;
+  coverAlt: string;
+  tags: string[];
+  items: WorkItem[];
 };

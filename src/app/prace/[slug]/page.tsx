@@ -6,9 +6,11 @@ import { profile } from "@/data/profile";
 import { site } from "@/data/site";
 import { workCategories } from "@/data/workCategories";
 import { ContactSection } from "@/components/sections/ContactSection/ContactSection";
+import { WorkCategoryCard } from "@/components/portfolio/WorkCategoryCard/WorkCategoryCard";
 import { WorkGallery } from "@/components/portfolio/WorkGallery/WorkGallery";
 import { Footer } from "@/components/layout/Footer/Footer";
 import { Header } from "@/components/layout/Header/Header";
+import categoryGridStyles from "@/components/sections/WorkCategoriesSection/WorkCategoriesSection.module.css";
 import styles from "./page.module.css";
 
 type WorkCategoryPageProps = {
@@ -19,7 +21,7 @@ type WorkCategoryPageProps = {
 
 export function generateStaticParams() {
   return workCategories
-    .filter((category) => category.status === "published" || category.status === "draft")
+    .filter((category) => category.status === "published")
     .map((category) => ({
       slug: category.slug,
     }));
@@ -29,7 +31,7 @@ export async function generateMetadata({ params }: WorkCategoryPageProps): Promi
   const { slug } = await params;
   const category = workCategories.find((item) => item.slug === slug);
 
-  if (!category || category.status === "hidden") {
+  if (!category || category.status !== "published") {
     return {
       title: site.title,
       robots: {
@@ -76,9 +78,11 @@ export default async function WorkCategoryPage({ params }: WorkCategoryPageProps
   const { slug } = await params;
   const category = workCategories.find((item) => item.slug === slug);
 
-  if (!category || category.status === "hidden") {
+  if (!category || category.status !== "published") {
     notFound();
   }
+
+  const hasSubcategories = (category.subcategories?.length ?? 0) > 0;
 
   return (
     <>
@@ -107,9 +111,24 @@ export default async function WorkCategoryPage({ params }: WorkCategoryPageProps
             </div>
           </div>
         </section>
-        <section className={styles.gallerySection} aria-label="Prace w kategorii">
+        <section
+          className={styles.gallerySection}
+          aria-label={hasSubcategories ? "Podkategorie prac" : "Prace w kategorii"}
+        >
           <div className={styles.container}>
-            <WorkGallery items={category.items} />
+            {hasSubcategories ? (
+              <div className={categoryGridStyles.grid}>
+                {category.subcategories?.map((subcategory) => (
+                  <WorkCategoryCard
+                    category={subcategory}
+                    href={`/prace/${category.slug}/${subcategory.slug}`}
+                    key={subcategory.slug}
+                  />
+                ))}
+              </div>
+            ) : (
+              <WorkGallery items={category.items} />
+            )}
           </div>
         </section>
         <ContactSection contacts={contacts} />

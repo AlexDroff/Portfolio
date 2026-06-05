@@ -1,4 +1,104 @@
-import type { WorkCategory } from "@/types/portfolio";
+import type { WorkCategory, WorkItem } from "@/types/portfolio";
+
+const formatNumber = (value: number) => value.toString().padStart(2, "0");
+
+const range = (start: number, end: number) =>
+  Array.from({ length: end - start + 1 }, (_, index) => start + index);
+
+const createItems = (
+  ids: number[],
+  buildSrc: (index: number) => string,
+  buildText: (index: number) => { alt: string; caption: string },
+  tags: string[],
+  idPrefix: string,
+  featuredIndex?: number,
+): WorkItem[] =>
+  ids.map((index) => {
+    const text = buildText(index);
+
+    return {
+      id: `${idPrefix}-${formatNumber(index)}`,
+      src: buildSrc(index),
+      alt: text.alt,
+      caption: text.caption,
+      tags,
+      featured: featuredIndex === index ? true : undefined,
+    };
+  });
+
+const bookletFiles = [
+  "booklets_01-1.webp",
+  "booklets_01-2.webp",
+  "booklets_02-1.webp",
+  "booklets_02-2.webp",
+  "booklets_03-1.webp",
+  "booklets_03-2.webp",
+  "booklets_04-1.webp",
+  "booklets_04-2.webp",
+  "booklets_05-1.webp",
+  "booklets_05-2.webp",
+  "booklets_06.webp",
+  "booklets_07-1.webp",
+  "booklets_07-2.webp",
+  "booklets_08-1.webp",
+  "booklets_08-2.webp",
+  "booklets-09_1.webp",
+  "booklets-09_2.webp",
+  "booklets-09_3.webp",
+  "booklets-09_4.webp",
+  "booklets-09_5.webp",
+  "booklets-09_6.webp",
+  "booklets-10_1.webp",
+  "booklets-10_2.webp",
+  "booklets-11_1.webp",
+  "booklets-11_2.webp",
+];
+
+const standardPosterItems = createItems(
+  range(1, 10),
+  (index) => `/work/posters/standard/posters-standard_${formatNumber(index)}.webp`,
+  (index) => ({
+    alt: `Plakat standardowy - projekt ${index}`,
+    caption: `Plakat do druku, wariant ${index}`,
+  }),
+  ["plakat", "druk", "kompozycja"],
+  "poster-standard",
+  1,
+);
+
+const aiPosterItems = [
+  ...createItems(
+    range(1, 12),
+    (index) => `/work/posters/ai-generated/ai-landscape/poster-land_${formatNumber(index)}.webp`,
+    (index) => ({
+      alt: `AI artwork - poster poziomy ${index}`,
+      caption: `AI / digital artwork, format poziomy ${index}`,
+    }),
+    ["AI artwork", "digital artwork", "poster"],
+    "ai-poster-landscape",
+    1,
+  ),
+  ...createItems(
+    [...range(1, 45), 47],
+    (index) => `/work/posters/ai-generated/ai-portrait/poster-port_${formatNumber(index)}.webp`,
+    (index) => ({
+      alt: `AI artwork - poster pionowy ${index}`,
+      caption: `AI / digital artwork, format pionowy ${index}`,
+    }),
+    ["AI artwork", "digital artwork", "poster"],
+    "ai-poster-portrait",
+  ),
+  ...createItems(
+    range(1, 10),
+    (index) => `/work/posters/ai-generated/ai-squared/poster-square_${formatNumber(index)}.webp`,
+    (index) => ({
+      alt: `AI artwork - poster kwadratowy ${index}`,
+      caption: `AI / digital artwork, format kwadratowy ${index}`,
+    }),
+    ["AI artwork", "digital artwork", "poster"],
+    "ai-poster-square",
+  ),
+];
 
 export const workCategories: WorkCategory[] = [
   {
@@ -7,63 +107,21 @@ export const workCategories: WorkCategory[] = [
     shortDescription: "Projekty małych formatów firmowych przygotowane do druku.",
     longDescription:
       "Wizytówki i materiały identyfikacyjne z naciskiem na czytelność, kompozycję i przygotowanie produkcyjne.",
-    coverImage: "/images/business-card/business-card_01.webp",
-    coverAlt: "Wizytówka - 1",
+    coverImage: "/work/category-covers/cover-business-cards.webp",
+    coverAlt: "Techniczna ilustracja wizytówek",
     status: "published",
     tags: ["wizytówki", "materiały firmowe", "druk"],
-    items: [
-      {
-        id: "business-card-01",
-        src: "/images/business-card/business-card_01.webp",
-        alt: "wizytówka - 1",
-        featured: true,
-      },
-      {
-        id: "business-card-02",
-        src: "/images/business-card/business-card_02.webp",
-        alt: "wizytówka - 2",
-      },
-      {
-        id: "business-card-03",
-        src: "/images/business-card/business-card_03.webp",
-        alt: "wizytówka - 3",
-      },
-      {
-        id: "business-card-04",
-        src: "/images/business-card/business-card_04.webp",
-        alt: "wizytówka - 4",
-      },
-      {
-        id: "business-card-05",
-        src: "/images/business-card/business-card_05.webp",
-        alt: "wizytówka - 5",
-      },
-      {
-        id: "business-card-06",
-        src: "/images/business-card/business-card_06.webp",
-        alt: "wizytówka - 6",
-      },
-      {
-        id: "business-card-07",
-        src: "/images/business-card/business-card_07.webp",
-        alt: "wizytówka - 7",
-      },
-      {
-        id: "business-card-08",
-        src: "/images/business-card/business-card_08.webp",
-        alt: "wizytówka - 8",
-      },
-      {
-        id: "business-card-09",
-        src: "/images/business-card/business-card_09.webp",
-        alt: "wizytówka - 9",
-      },
-      {
-        id: "business-card-10",
-        src: "/images/business-card/business-card_10.webp",
-        alt: "wizytówka - 10",
-      },
-    ],
+    items: createItems(
+      range(1, 14),
+      (index) => `/work/business-cards/business-cards_${formatNumber(index)}.webp`,
+      (index) => ({
+        alt: `Wizytówka firmowa - projekt ${index}`,
+        caption: `Wizytówka firmowa, wariant ${index}`,
+      }),
+      ["wizytówka", "materiał firmowy", "druk"],
+      "business-card",
+      1,
+    ),
   },
   {
     slug: "ulotki-foldery-broszury",
@@ -71,186 +129,195 @@ export const workCategories: WorkCategory[] = [
     shortDescription: "Foldery reklamowe i broszury w układach do druku.",
     longDescription:
       "Materiały reklamowe wielostronicowe i składane, przygotowane jako czytelne nośniki informacji.",
-    coverImage: "/images/booklet/booklet-03_1.webp",
-    coverAlt: "Folder reklamowy - 1",
+    coverImage: "/work/category-covers/cover-booklets.webp",
+    coverAlt: "Techniczna ilustracja ulotek i broszur",
     status: "published",
     tags: ["foldery", "broszury", "reklama"],
-    items: [
+    items: bookletFiles.map((fileName, index) => ({
+      id: `booklet-${index + 1}`,
+      src: `/work/booklets/${fileName}`,
+      alt: `Folder lub broszura reklamowa - projekt ${index + 1}`,
+      caption: `Folder lub broszura, układ ${index + 1}`,
+      tags: ["folder", "broszura", "druk"],
+      featured: index === 0 ? true : undefined,
+    })),
+  },
+  {
+    slug: "katalogi",
+    title: "Katalogi",
+    shortDescription: "Katalogi produktowe podzielone według projektu.",
+    longDescription:
+      "Wybierz katalog, aby zobaczyć osobną galerię składu i układu publikacji.",
+    coverImage: "/work/category-covers/cover-catalogs.webp",
+    coverAlt: "Techniczna ilustracja katalogu",
+    status: "published",
+    tags: ["katalogi", "publikacje", "DTP"],
+    items: [],
+    subcategories: [
       {
-        id: "booklet-03-1",
-        src: "/images/booklet/booklet-03_1.webp",
-        alt: "Folder reklamowy - 1",
-        featured: true,
+        slug: "arles",
+        title: "Arles",
+        shortDescription: "Katalog Arles.",
+        coverImage: "/work/catalogs/arles/arles_01.webp",
+        coverAlt: "Katalog Arles - okładka",
+        tags: ["katalog", "skład", "DTP"],
+        items: createItems(
+          range(1, 40),
+          (index) => `/work/catalogs/arles/arles_${formatNumber(index)}.webp`,
+          (index) => ({
+            alt: `Katalog Arles - strona ${index}`,
+            caption: `Katalog Arles, strona ${index}`,
+          }),
+          ["katalog", "skład", "DTP"],
+          "arles",
+          1,
+        ),
       },
       {
-        id: "booklet-03-2",
-        src: "/images/booklet/booklet-03_2.webp",
-        alt: "Folder reklamowy - 2",
+        slug: "euro-stand",
+        title: "Euro-Stand",
+        shortDescription: "Katalog Euro-Stand.",
+        coverImage: "/work/catalogs/euro-stand/euro-stand_01.webp",
+        coverAlt: "Katalog Euro-Stand - okładka",
+        tags: ["katalog", "publikacja", "DTP"],
+        items: createItems(
+          range(1, 16),
+          (index) => `/work/catalogs/euro-stand/euro-stand_${formatNumber(index)}.webp`,
+          (index) => ({
+            alt: `Katalog Euro-Stand - strona ${index}`,
+            caption: `Katalog Euro-Stand, strona ${index}`,
+          }),
+          ["katalog", "publikacja", "DTP"],
+          "euro-stand",
+          1,
+        ),
       },
       {
-        id: "booklet-01-1",
-        src: "/images/booklet/booklet-01_1.webp",
-        alt: "Broszura - 1",
+        slug: "herbapol",
+        title: "Herbapol",
+        shortDescription: "Katalog Herbapol.",
+        coverImage: "/work/catalogs/herbapol/herbapol_01.webp",
+        coverAlt: "Katalog Herbapol - okładka",
+        tags: ["katalog", "materiały produktowe", "DTP"],
+        items: createItems(
+          range(1, 6),
+          (index) => `/work/catalogs/herbapol/herbapol_${formatNumber(index)}.webp`,
+          (index) => ({
+            alt: `Katalog Herbapol - strona ${index}`,
+            caption: `Katalog Herbapol, strona ${index}`,
+          }),
+          ["katalog", "materiały produktowe", "DTP"],
+          "herbapol",
+          1,
+        ),
       },
       {
-        id: "booklet-01-2",
-        src: "/images/booklet/booklet-01_2.webp",
-        alt: "Broszura - 2",
-      },
-      {
-        id: "booklet-02-1",
-        src: "/images/booklet/booklet-02_1.webp",
-        alt: "Folder reklamowy - 3",
+        slug: "zoloty-vek",
+        title: "Złoty Wiek",
+        shortDescription: "Katalog Złoty Wiek.",
+        coverImage: "/work/catalogs/zoloty-vek/zoloty-vek_01.webp",
+        coverAlt: "Katalog Złoty Wiek - okładka",
+        tags: ["katalog", "publikacja", "DTP"],
+        items: createItems(
+          range(1, 20),
+          (index) => `/work/catalogs/zoloty-vek/zoloty-vek_${formatNumber(index)}.webp`,
+          (index) => ({
+            alt: `Katalog Złoty Wiek - strona ${index}`,
+            caption: `Katalog Złoty Wiek, strona ${index}`,
+          }),
+          ["katalog", "publikacja", "DTP"],
+          "zoloty-vek",
+          1,
+        ),
       },
     ],
   },
   {
-    slug: "katalogi-ksiazki-publikacje",
-    title: "Katalogi, książki i publikacje",
-    shortDescription: "Układy katalogów, okładek i materiałów wielostronicowych.",
+    slug: "okladki-ksiazek",
+    title: "Okładki książek",
+    shortDescription: "Projekty okładek książek przygotowane do publikacji i druku.",
     longDescription:
-      "Publikacje i katalogi produktowe wymagające porządku w treści, rytmu wizualnego i przygotowania plików do produkcji.",
-    coverImage: "/images/catalog/zoloty-vek/catalog-zv_01.webp",
-    coverAlt: "Katalog produktowy - 1",
+      "Osobna galeria projektów okładek z naciskiem na kompozycję, typografię i przygotowanie produkcyjne.",
+    coverImage: "/work/category-covers/cover-book-covers.webp",
+    coverAlt: "Techniczna ilustracja okładek książek",
     status: "published",
-    tags: ["katalogi", "książki", "publikacje"],
-    items: [
-      {
-        id: "catalog-zv-01",
-        src: "/images/catalog/zoloty-vek/catalog-zv_01.webp",
-        alt: "katalog - 1",
-        featured: true,
-      },
-      {
-        id: "catalog-zv-02",
-        src: "/images/catalog/zoloty-vek/catalog-zv_02.webp",
-        alt: "katalog - 2",
-      },
-      {
-        id: "catalog-zv-03",
-        src: "/images/catalog/zoloty-vek/catalog-zv_03.webp",
-        alt: "katalog - 3",
-      },
-      {
-        id: "catalog-zv-04",
-        src: "/images/catalog/zoloty-vek/catalog-zv_04.webp",
-        alt: "katalog - 4",
-      },
-      {
-        id: "catalog-zv-05",
-        src: "/images/catalog/zoloty-vek/catalog-zv_05.webp",
-        alt: "katalog - 5",
-      },
-      {
-        id: "catalog-zv-06",
-        src: "/images/catalog/zoloty-vek/catalog-zv_06.webp",
-        alt: "katalog - 6",
-      },
-      {
-        id: "catalog-zv-07",
-        src: "/images/catalog/zoloty-vek/catalog-zv_07.webp",
-        alt: "katalog - 7",
-      },
-      {
-        id: "catalog-zv-08",
-        src: "/images/catalog/zoloty-vek/catalog-zv_08.webp",
-        alt: "katalog - 8",
-      },
-      {
-        id: "catalog-zv-09",
-        src: "/images/catalog/zoloty-vek/catalog-zv_09.webp",
-        alt: "katalog - 9",
-      },
-      {
-        id: "catalog-zv-10",
-        src: "/images/catalog/zoloty-vek/catalog-zv_10.webp",
-        alt: "katalog - 10",
-      },
-    ],
-  },
-  {
-    slug: "identyfikacja-wizualna",
-    title: "Identyfikacja wizualna",
-    shortDescription: "Księgi znaku i elementy systemu wizualnego marki.",
-    longDescription:
-      "Materiały identyfikacji wizualnej porządkujące logo, kolor, typografię i zastosowania marki.",
-    coverImage: "/images/brand-book/brand-book_01.webp",
-    coverAlt: "Księga znaku - 1",
-    status: "published",
-    tags: ["identyfikacja", "księga znaku", "branding"],
-    items: [
-      {
-        id: "brand-book-01",
-        src: "/images/brand-book/brand-book_01.webp",
-        alt: "Księga znaku - 1",
-        featured: true,
-      },
-      {
-        id: "brand-book-02",
-        src: "/images/brand-book/brand-book_02.webp",
-        alt: "Księga znaku - 2",
-      },
-      {
-        id: "brand-book-03",
-        src: "/images/brand-book/brand-book_03.webp",
-        alt: "Księga znaku - 3",
-      },
-      {
-        id: "brand-book-04",
-        src: "/images/brand-book/brand-book_04.webp",
-        alt: "Księga znaku - 4",
-      },
-      {
-        id: "brand-book-05",
-        src: "/images/brand-book/brand-book_05.webp",
-        alt: "Księga znaku - 5",
-      },
-    ],
+    tags: ["okładki", "książki", "druk"],
+    items: createItems(
+      range(1, 22),
+      (index) => `/work/book-covers/book-covers_${formatNumber(index)}.webp`,
+      (index) => ({
+        alt: `Projekt okładki książki - ${index}`,
+        caption: `Okładka książki, wariant ${index}`,
+      }),
+      ["okładka", "książka", "druk"],
+      "book-cover",
+      1,
+    ),
   },
   {
     slug: "plakaty-i-postery",
     title: "Plakaty i postery",
-    shortDescription: "Kategoria robocza wymagająca ręcznej selekcji prac.",
-    coverImage: "/images/poster/landscape/poster-land_01.webp",
-    coverAlt: "Plakat - 1",
-    status: "draft",
-    tags: ["plakaty", "postery"],
-    items: [
+    shortDescription: "Plakaty drukowane oraz osobno oznaczone prace AI / digital artwork.",
+    longDescription:
+      "Wybierz typ posterów, aby zobaczyć standardowe prace drukowane albo osobną galerię AI / digital artwork.",
+    coverImage: "/work/category-covers/cover-posters.webp",
+    coverAlt: "Techniczna ilustracja plakatów",
+    status: "published",
+    tags: ["plakaty", "postery", "AI artwork"],
+    items: [],
+    subcategories: [
       {
-        id: "poster-land-01",
-        src: "/images/poster/landscape/poster-land_01.webp",
-        alt: "Plakat poziomy - 1",
+        slug: "standard",
+        title: "Postery standardowe",
+        shortDescription: "Plakaty i postery przygotowane jako projekty do druku.",
+        coverImage: "/work/posters/standard/posters-standard_01.webp",
+        coverAlt: "Poster standardowy - projekt do druku",
+        tags: ["plakat", "druk", "kompozycja"],
+        items: standardPosterItems,
       },
       {
-        id: "poster-land-02",
-        src: "/images/poster/landscape/poster-land_02.webp",
-        alt: "Plakat poziomy - 2",
-      },
-      {
-        id: "poster-port-01",
-        src: "/images/poster/portrait/poster-port_01.webp",
-        alt: "Plakat pionowy - 1",
+        slug: "ai-generated",
+        title: "Postery AI",
+        shortDescription: "Prace AI / digital artwork pokazane jako osobna galeria.",
+        coverImage: "/work/posters/ai-generated/ai-landscape/poster-land_01.webp",
+        coverAlt: "AI artwork - poster poziomy",
+        tags: ["AI artwork", "digital artwork", "poster"],
+        items: aiPosterItems,
       },
     ],
   },
   {
-    slug: "banery-i-druk-wielkoformatowy",
-    title: "Banery i druk wielkoformatowy",
-    shortDescription: "Kategoria robocza do uzupełnienia po selekcji materiałów.",
-    coverImage: "",
-    coverAlt: "",
-    status: "draft",
-    tags: ["banery", "druk wielkoformatowy"],
-    items: [],
-  },
-  {
-    slug: "opakowania-i-etykiety",
-    title: "Opakowania i etykiety",
-    shortDescription: "Kategoria robocza do uzupełnienia dedykowanymi pracami.",
-    coverImage: "",
-    coverAlt: "",
-    status: "draft",
-    tags: ["opakowania", "etykiety"],
-    items: [],
+    slug: "banery-rollupy-druk-wielkoformatowy",
+    title: "Banery, roll-upy i druk wielkoformatowy",
+    shortDescription: "Banery i roll-upy przygotowane do druku wielkoformatowego.",
+    longDescription:
+      "Materiały wielkoformatowe z naciskiem na czytelność, skalę i przygotowanie produkcyjne.",
+    coverImage: "/work/category-covers/cover-banners-rollups.webp",
+    coverAlt: "Techniczna ilustracja banerów i roll-upów",
+    status: "published",
+    tags: ["banery", "roll-up", "druk wielkoformatowy"],
+    items: [
+      ...createItems(
+        range(1, 4),
+        (index) => `/work/banners-rollups/banner_${formatNumber(index)}.webp`,
+        (index) => ({
+          alt: `Baner reklamowy - projekt ${index}`,
+          caption: `Baner reklamowy, wariant ${index}`,
+        }),
+        ["baner", "druk wielkoformatowy", "reklama"],
+        "banner",
+        1,
+      ),
+      ...createItems(
+        range(1, 2),
+        (index) => `/work/banners-rollups/rollup_${formatNumber(index)}.webp`,
+        (index) => ({
+          alt: `Roll-up reklamowy - projekt ${index}`,
+          caption: `Roll-up reklamowy, wariant ${index}`,
+        }),
+        ["roll-up", "druk wielkoformatowy", "reklama"],
+        "rollup",
+      ),
+    ],
   },
 ];
