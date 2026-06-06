@@ -4,7 +4,7 @@
   z-index: 60;
   display: grid;
   place-items: center;
-  padding: var(--space-4);
+  padding: var(--space-3);
   overflow-x: hidden;
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.86);
@@ -57,9 +57,9 @@
   position: absolute;
   z-index: 2;
   display: inline-flex;
-  width: 42px;
-  height: 42px;
-  min-height: 42px;
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -96,8 +96,8 @@
 }
 
 .closeButton {
-  top: var(--space-3);
-  right: var(--space-3);
+  top: var(--space-2);
+  right: var(--space-2);
 }
 
 .navButton {
@@ -106,11 +106,11 @@
 }
 
 .previous {
-  left: var(--space-3);
+  left: var(--space-2);
 }
 
 .next {
-  right: var(--space-3);
+  right: var(--space-2);
 }
 
 .buttonIcon {
@@ -119,47 +119,27 @@
   fill: currentColor;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 768px) {
   .overlay {
     padding: var(--space-5);
   }
-}
-
-@media (max-width: 520px) {
-  .overlay {
-    padding: var(--space-3);
-  }
-
-  .dialog {
-    max-height: 82vh;
-  }
-
-  .viewer,
-  .imageFrame {
-    max-height: 82vh;
-  }
-
-  .imageFrame img {
-    max-width: min(90vw, 980px);
-    max-height: 82vh;
-  }
 
   .viewerButton {
-    width: 40px;
-    height: 40px;
-    min-height: 40px;
+    width: 42px;
+    height: 42px;
+    min-height: 42px;
   }
 
   .closeButton {
-    top: var(--space-2);
-    right: var(--space-2);
+    top: var(--space-3);
+    right: var(--space-3);
   }
 
   .previous {
-    left: var(--space-2);
+    left: var(--space-3);
   }
 
   .next {
-    right: var(--space-2);
+    right: var(--space-3);
   }
 }

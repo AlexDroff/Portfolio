@@ -4,6 +4,7 @@
   z-index: 40;
   display: grid;
   justify-items: end;
+  overflow: hidden;
   background: rgba(0, 0, 0, 0.72);
   opacity: 0;
   pointer-events: none;
@@ -109,7 +110,7 @@
   justify-content: flex-start;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .overlay {
     display: none;
   }
