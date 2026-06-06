@@ -1,0 +1,21 @@
+.header {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  color: var(--color-text);
+}
+
+.description {
+  margin: 0;
+  max-width: 680px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-md);
+  line-height: 1.65;
+}
