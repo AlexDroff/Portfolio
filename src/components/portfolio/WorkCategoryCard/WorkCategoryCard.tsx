@@ -9,7 +9,7 @@ type WorkCategoryCardProps = {
     shortDescription: string;
     coverImage: string;
     coverAlt: string;
-    tags: string[];
+    tags?: string[];
   };
   href?: string;
 };
@@ -35,16 +35,6 @@ export function WorkCategoryCard({ category, href }: WorkCategoryCardProps) {
         </span>
         <span className={styles.content}>
           <span className={styles.title}>{category.title}</span>
-          <span className={styles.description}>{category.shortDescription}</span>
-          {category.tags.length > 0 ? (
-            <span className={styles.tags} aria-label="Tagi kategorii">
-              {category.tags.map((tag) => (
-                <span className={styles.tag} key={tag}>
-                  {tag}
-                </span>
-              ))}
-            </span>
-          ) : null}
         </span>
       </Link>
     </article>

@@ -1,19 +1,20 @@
 .header {
   display: grid;
+  justify-items: center;
   gap: var(--space-3);
+  width: 100%;
   max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .title {
-  margin: 0;
   color: var(--color-text);
-  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-4xl));
-  line-height: 1.1;
-  letter-spacing: 0;
 }
 
 .description {
   margin: 0;
+  max-width: 680px;
   color: var(--color-text-secondary);
   font-size: var(--font-size-md);
   line-height: 1.65;

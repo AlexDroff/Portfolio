@@ -16,8 +16,15 @@ type CompetenceFlipCardProps = {
   onToggle: () => void;
 };
 
-function CompetenceFlipCard({ card, isActive, onClose, onToggle }: CompetenceFlipCardProps) {
-  const buttonClassName = [styles.card, isActive ? styles.flipped : ""].filter(Boolean).join(" ");
+function CompetenceFlipCard({
+  card,
+  isActive,
+  onClose,
+  onToggle,
+}: CompetenceFlipCardProps) {
+  const buttonClassName = [styles.card, isActive ? styles.flipped : ""]
+    .filter(Boolean)
+    .join(" ");
   const cardContent = (
     <span className={styles.cardInner}>
       <span className={[styles.cardFace, styles.cardFront].join(" ")}>
@@ -56,7 +63,12 @@ function CompetenceFlipCard({ card, isActive, onClose, onToggle }: CompetenceFli
   }
 
   return (
-    <button aria-expanded="false" className={buttonClassName} onClick={onToggle} type="button">
+    <button
+      aria-expanded="false"
+      className={buttonClassName}
+      onClick={onToggle}
+      type="button"
+    >
       {cardContent}
     </button>
   );
@@ -98,10 +110,6 @@ export function CompetenceSection({ competences }: CompetenceSectionProps) {
       <Container className={styles.inner}>
         <header className={styles.header}>
           <h2>Umiejętności i sposób pracy</h2>
-          <p>
-            Narzędzia, techniki i procesy, z których korzystam przy projektowaniu materiałów
-            graficznych, składzie DTP, przygotowaniu plików do druku oraz współpracy z produkcją.
-          </p>
         </header>
         <div className={styles.grid} ref={cardsRef}>
           {competences.map((card) => (
@@ -111,7 +119,9 @@ export function CompetenceSection({ competences }: CompetenceSectionProps) {
               key={card.id}
               onClose={() => setActiveCardId(null)}
               onToggle={() =>
-                setActiveCardId((current) => (current === card.id ? null : card.id))
+                setActiveCardId((current) =>
+                  current === card.id ? null : card.id,
+                )
               }
             />
           ))}

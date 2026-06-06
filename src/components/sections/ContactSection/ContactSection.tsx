@@ -13,7 +13,7 @@ export function ContactSection({ contacts }: ContactSectionProps) {
     <section className={styles.section} id="kontakt">
       <Container className={styles.inner}>
         <SectionHeader
-          title="Kontakt zawodowy"
+          title="Dane kontaktowe"
           description="Kontakt w sprawie pracy graficznej, DTP, przygotowania do druku i produkcji materiałów."
         />
         <div className={styles.links}>

@@ -12,10 +12,7 @@ export function WorkCategoriesSection() {
   return (
     <section className={styles.section} id="prace">
       <Container className={styles.inner}>
-        <SectionHeader
-          title="Wybrane prace"
-          description="Prace podzielone według typu projektu — od materiałów firmowych po publikacje, plakaty i identyfikację wizualną."
-        />
+        <SectionHeader title="Portofolio graficzne" />
         {publishedCategories.length > 0 ? (
           <div className={styles.grid}>
             {publishedCategories.map((category) => (
@@ -24,7 +21,8 @@ export function WorkCategoriesSection() {
           </div>
         ) : (
           <p className={styles.empty}>
-            Kategorie prac są w przygotowaniu i zostaną dodane po selekcji portfolio.
+            Kategorie prac są w przygotowaniu i zostaną dodane po selekcji
+            portfolio.
           </p>
         )}
       </Container>

@@ -14,6 +14,8 @@ type HeroSectionProps = {
 };
 
 export function HeroSection({ profile }: HeroSectionProps) {
+  const summaryParagraphs = profile.summary.split("\n\n");
+
   return (
     <section className={styles.section} id="o-mnie">
       <Container className={styles.introShell}>
@@ -22,7 +24,11 @@ export function HeroSection({ profile }: HeroSectionProps) {
             <h1>{profile.name}</h1>
             <p className={styles.summary}>
               <strong>{profile.headline}</strong>
-              <span className={styles.summaryText}>{profile.summary}</span>
+              {summaryParagraphs.map((paragraph) => (
+                <span className={styles.summaryText} key={paragraph}>
+                  {paragraph}
+                </span>
+              ))}
             </p>
             <div className={styles.actions}>
               <Button href="#prace">Zobacz moje projekty</Button>

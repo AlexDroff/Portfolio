@@ -84,6 +84,13 @@ a {
   transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
+h2 {
+  margin: 0;
+  font-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-4xl));
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
 button {
   border: 0;
   font: inherit;

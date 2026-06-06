@@ -107,7 +107,7 @@ export const workCategories: WorkCategory[] = [
     shortDescription: "Projekty małych formatów firmowych przygotowane do druku.",
     longDescription:
       "Wizytówki i materiały identyfikacyjne z naciskiem na czytelność, kompozycję i przygotowanie produkcyjne.",
-    coverImage: "/work/category-covers/cover-business-cards.webp",
+    coverImage: "/work/category-covers/dt-cover-business-cards.webp",
     coverAlt: "Techniczna ilustracja wizytówek",
     status: "published",
     tags: ["wizytówki", "materiały firmowe", "druk"],
@@ -129,7 +129,7 @@ export const workCategories: WorkCategory[] = [
     shortDescription: "Foldery reklamowe i broszury w układach do druku.",
     longDescription:
       "Materiały reklamowe wielostronicowe i składane, przygotowane jako czytelne nośniki informacji.",
-    coverImage: "/work/category-covers/cover-booklets.webp",
+    coverImage: "/work/category-covers/dt-cover-booklets.webp",
     coverAlt: "Techniczna ilustracja ulotek i broszur",
     status: "published",
     tags: ["foldery", "broszury", "reklama"],
@@ -148,7 +148,7 @@ export const workCategories: WorkCategory[] = [
     shortDescription: "Katalogi produktowe podzielone według projektu.",
     longDescription:
       "Wybierz katalog, aby zobaczyć osobną galerię składu i układu publikacji.",
-    coverImage: "/work/category-covers/cover-catalogs.webp",
+    coverImage: "/work/category-covers/dt-cover-catalogs.webp",
     coverAlt: "Techniczna ilustracja katalogu",
     status: "published",
     tags: ["katalogi", "publikacje", "DTP"],
@@ -238,7 +238,7 @@ export const workCategories: WorkCategory[] = [
     shortDescription: "Projekty okładek książek przygotowane do publikacji i druku.",
     longDescription:
       "Osobna galeria projektów okładek z naciskiem na kompozycję, typografię i przygotowanie produkcyjne.",
-    coverImage: "/work/category-covers/cover-book-covers.webp",
+    coverImage: "/work/category-covers/dt-cover-book-covers.webp",
     coverAlt: "Techniczna ilustracja okładek książek",
     status: "published",
     tags: ["okładki", "książki", "druk"],
@@ -260,7 +260,7 @@ export const workCategories: WorkCategory[] = [
     shortDescription: "Plakaty drukowane oraz osobno oznaczone prace AI / digital artwork.",
     longDescription:
       "Wybierz typ posterów, aby zobaczyć standardowe prace drukowane albo osobną galerię AI / digital artwork.",
-    coverImage: "/work/category-covers/cover-posters.webp",
+    coverImage: "/work/category-covers/dt-cover-posters.webp",
     coverAlt: "Techniczna ilustracja plakatów",
     status: "published",
     tags: ["plakaty", "postery", "AI artwork"],
@@ -292,7 +292,7 @@ export const workCategories: WorkCategory[] = [
     shortDescription: "Banery i roll-upy przygotowane do druku wielkoformatowego.",
     longDescription:
       "Materiały wielkoformatowe z naciskiem na czytelność, skalę i przygotowanie produkcyjne.",
-    coverImage: "/work/category-covers/cover-banners-rollups.webp",
+    coverImage: "/work/category-covers/dt-cover-banners-rollups.webp",
     coverAlt: "Techniczna ilustracja banerów i roll-upów",
     status: "published",
     tags: ["banery", "roll-up", "druk wielkoformatowy"],
