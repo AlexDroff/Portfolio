@@ -28,7 +28,7 @@
   line-height: 1.65;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 790px) {
   .section {
     padding: var(--section-y) 0;
   }

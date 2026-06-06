@@ -30,6 +30,7 @@
   max-width: none;
   min-width: 0;
   align-self: stretch;
+  text-align: center;
 }
 
 .content h1 {
@@ -47,6 +48,7 @@
   margin: 0;
   color: var(--color-text-secondary);
   line-height: 1.65;
+  text-align: center;
 }
 
 .summary strong {
@@ -58,6 +60,7 @@
   font-size: clamp(var(--font-size-lg), 3.6vw, var(--font-size-xl));
   font-weight: 800;
   line-height: 1;
+  text-align: center;
 }
 
 .summaryText {
@@ -114,7 +117,7 @@
   object-position: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 790px) {
   .section {
     padding: calc(var(--space-9) + var(--space-6)) 0;
   }
@@ -139,6 +142,7 @@
     margin-left: var(--space-4);
     align-self: stretch;
     gap: var(--space-7);
+    text-align: left;
   }
 
   .content h1 {
@@ -149,12 +153,14 @@
 
   .summary {
     max-width: 760px;
+    text-align: left;
   }
 
   .summary strong {
     width: fit-content;
     margin-bottom: var(--space-4);
     font-size: clamp(var(--font-size-xl), 2.45vw, var(--font-size-2xl));
+    text-align: left;
   }
 
   .summaryText {

@@ -119,7 +119,7 @@
   fill: currentColor;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 790px) {
   .overlay {
     padding: var(--space-5);
   }

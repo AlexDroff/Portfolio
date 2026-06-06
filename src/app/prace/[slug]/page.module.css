@@ -79,7 +79,7 @@
   background: var(--color-bg-primary);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 790px) {
   .container {
     padding: 0 var(--space-5);
   }
