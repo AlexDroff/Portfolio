@@ -79,7 +79,7 @@ const aiPosterItems = [
     1,
   ),
   ...createItems(
-    [...range(1, 45), 47],
+    range(1, 41),
     (index) => `/work/posters/ai-generated/ai-portrait/poster-port_${formatNumber(index)}.webp`,
     (index) => ({
       alt: `AI artwork - poster pionowy ${index}`,
@@ -157,7 +157,7 @@ export const workCategories: WorkCategory[] = [
       {
         slug: "arles",
         title: "Arles",
-        shortDescription: "Katalog Arles.",
+        shortDescription: "Skład katalogu produktowego z układem stron przygotowanym do druku.",
         coverImage: "/work/catalogs/arles/arles_01.webp",
         coverAlt: "Katalog Arles - okładka",
         tags: ["katalog", "skład", "DTP"],
@@ -176,7 +176,7 @@ export const workCategories: WorkCategory[] = [
       {
         slug: "euro-stand",
         title: "Euro-Stand",
-        shortDescription: "Katalog Euro-Stand.",
+        shortDescription: "Galeria katalogu produktowego pokazująca układ stron i prezentację oferty.",
         coverImage: "/work/catalogs/euro-stand/euro-stand_01.webp",
         coverAlt: "Katalog Euro-Stand - okładka",
         tags: ["katalog", "publikacja", "DTP"],
@@ -195,7 +195,7 @@ export const workCategories: WorkCategory[] = [
       {
         slug: "herbapol",
         title: "Herbapol",
-        shortDescription: "Katalog Herbapol.",
+        shortDescription: "Projekt katalogu produktowego z czytelnym układem materiałów ofertowych.",
         coverImage: "/work/catalogs/herbapol/herbapol_01.webp",
         coverAlt: "Katalog Herbapol - okładka",
         tags: ["katalog", "materiały produktowe", "DTP"],
@@ -214,7 +214,7 @@ export const workCategories: WorkCategory[] = [
       {
         slug: "zoloty-vek",
         title: "Złoty Wiek",
-        shortDescription: "Katalog Złoty Wiek.",
+        shortDescription: "Skład katalogu z naciskiem na przejrzystą prezentację stron i produktów.",
         coverImage: "/work/catalogs/zoloty-vek/zoloty-vek_01.webp",
         coverAlt: "Katalog Złoty Wiek - okładka",
         tags: ["katalog", "publikacja", "DTP"],

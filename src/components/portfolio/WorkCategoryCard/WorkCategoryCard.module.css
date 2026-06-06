@@ -62,7 +62,7 @@
 
 .title {
   color: var(--color-bg-primary);
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   font-weight: 800;
   line-height: 1.2;
   overflow-wrap: anywhere;

@@ -12,7 +12,7 @@
 }
 
 .hero {
-  padding: var(--section-y-mobile) 0 var(--space-7);
+  padding: var(--space-6) 0 var(--space-6);
   background: var(--color-bg-primary);
 }
 
@@ -21,7 +21,7 @@
   align-items: center;
   width: fit-content;
   padding: var(--space-2) 14px;
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-5);
   border: 1px solid var(--color-brand-accent);
   border-radius: var(--radius-control);
   color: var(--color-brand-accent);
@@ -42,54 +42,36 @@
   outline-offset: 3px;
 }
 
+.bottomBackLink {
+  margin-top: var(--space-7);
+  margin-bottom: 0;
+}
+
 .heading {
   display: grid;
-  gap: var(--space-4);
-  max-width: 840px;
+  gap: var(--space-3);
+  max-width: 760px;
   min-width: 0;
 }
 
 .heading h1 {
   margin: 0;
   color: var(--color-brand-primary);
-  font-size: clamp(var(--font-size-3xl), 7vw, 72px);
-  line-height: 1;
+  font-size: clamp(var(--font-size-2xl), 5vw, 48px);
+  line-height: 1.08;
   letter-spacing: 0;
   overflow-wrap: anywhere;
 }
 
-.description,
-.longDescription {
+.description {
   margin: 0;
   color: var(--color-text-secondary);
 }
 
 .description {
-  color: var(--color-text);
-  font-size: clamp(var(--font-size-lg), 3vw, var(--font-size-xl));
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-.longDescription {
-  max-width: 720px;
-  line-height: 1.7;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-top: var(--space-2);
-}
-
-.tag {
-  padding: var(--space-1) var(--space-3);
-  border: 1px solid var(--color-border-dark);
-  border-radius: var(--radius-full);
-  color: var(--color-accent);
-  font-size: var(--font-size-xs);
-  line-height: 1.2;
+  max-width: 680px;
+  font-size: clamp(var(--font-size-md), 2vw, var(--font-size-lg));
+  line-height: 1.55;
 }
 
 .gallerySection {
@@ -105,7 +87,7 @@
 
 @media (min-width: 1024px) {
   .hero {
-    padding: var(--section-y) 0 var(--space-8);
+    padding: var(--space-7) 0 var(--space-7);
   }
 
   .gallerySection {

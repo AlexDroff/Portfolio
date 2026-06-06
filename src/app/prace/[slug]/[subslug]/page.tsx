@@ -1,12 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { contacts } from "@/data/contacts";
-import { profile } from "@/data/profile";
 import { workCategories } from "@/data/workCategories";
-import { ContactSection } from "@/components/sections/ContactSection/ContactSection";
 import { WorkGallery } from "@/components/portfolio/WorkGallery/WorkGallery";
-import { Footer } from "@/components/layout/Footer/Footer";
-import { Header } from "@/components/layout/Header/Header";
 import styles from "../page.module.css";
 
 type WorkSubcategoryPageProps = {
@@ -41,41 +36,29 @@ export default async function WorkSubcategoryPage({ params }: WorkSubcategoryPag
     notFound();
   }
 
+  const backHref = `/prace/${category.slug}`;
+
   return (
-    <>
-      <Header profile={profile} contacts={contacts} />
-      <main className={styles.page}>
-        <section className={styles.hero}>
-          <div className={styles.container}>
-            <Link className={styles.backLink} href={`/prace/${category.slug}`}>
-              Wróć do kategorii
-            </Link>
-            <div className={styles.heading}>
-              <h1>{subcategory.title}</h1>
-              <p className={styles.description}>{subcategory.shortDescription}</p>
-              {subcategory.longDescription ? (
-                <p className={styles.longDescription}>{subcategory.longDescription}</p>
-              ) : null}
-              {subcategory.tags.length > 0 ? (
-                <div className={styles.tags} aria-label="Tagi kategorii">
-                  {subcategory.tags.map((tag) => (
-                    <span className={styles.tag} key={tag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-            </div>
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.container}>
+          <Link className={styles.backLink} href={backHref}>
+            Wróć do prac
+          </Link>
+          <div className={styles.heading}>
+            <h1>{subcategory.title}</h1>
+            <p className={styles.description}>{subcategory.shortDescription}</p>
           </div>
-        </section>
-        <section className={styles.gallerySection} aria-label="Prace w podkategorii">
-          <div className={styles.container}>
-            <WorkGallery items={subcategory.items} />
-          </div>
-        </section>
-        <ContactSection contacts={contacts} />
-      </main>
-      <Footer name={profile.name} />
-    </>
+        </div>
+      </section>
+      <section className={styles.gallerySection} aria-label="Prace w podkategorii">
+        <div className={styles.container}>
+          <WorkGallery items={subcategory.items} />
+          <Link className={`${styles.backLink} ${styles.bottomBackLink}`} href={backHref}>
+            Wróć do prac
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }

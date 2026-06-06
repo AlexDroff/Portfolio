@@ -66,13 +66,10 @@ export function WorkLightbox({
         onClick={(event) => event.stopPropagation()}
         role="dialog"
       >
-        <div className={styles.topbar}>
-          <p className={styles.counter}>
-            {currentIndex + 1} / {items.length}
-          </p>
+        <div className={styles.viewer}>
           <button
             aria-label="Zamknij podgląd"
-            className={styles.iconButton}
+            className={[styles.viewerButton, styles.closeButton].join(" ")}
             onClick={onClose}
             type="button"
           >
@@ -80,11 +77,9 @@ export function WorkLightbox({
               <use href="/icon.svg#icon-close" />
             </svg>
           </button>
-        </div>
-        <div className={styles.viewer}>
           <button
             aria-label="Poprzednia praca"
-            className={[styles.navButton, styles.previous].join(" ")}
+            className={[styles.viewerButton, styles.navButton, styles.previous].join(" ")}
             onClick={onPrevious}
             type="button"
           >
@@ -98,7 +93,7 @@ export function WorkLightbox({
           </div>
           <button
             aria-label="Następna praca"
-            className={[styles.navButton, styles.next].join(" ")}
+            className={[styles.viewerButton, styles.navButton, styles.next].join(" ")}
             onClick={onNext}
             type="button"
           >
@@ -107,20 +102,6 @@ export function WorkLightbox({
             </svg>
           </button>
         </div>
-        {(currentItem.caption || currentItem.tags?.length) ? (
-          <div className={styles.meta}>
-            {currentItem.caption ? <p>{currentItem.caption}</p> : null}
-            {currentItem.tags?.length ? (
-              <div className={styles.tags} aria-label="Tagi pracy">
-                {currentItem.tags.map((tag) => (
-                  <span className={styles.tag} key={tag}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            ) : null}
-          </div>
-        ) : null}
       </div>
     </div>
   );
