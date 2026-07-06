@@ -23,9 +23,11 @@
   gap: var(--space-5);
   align-items: center;
   justify-content: center;
-  justify-items: start;
-  width: min(100%, 960px);
+  justify-items: stretch;
+  width: fit-content;
+  max-width: 100%;
   min-width: 0;
+  margin-inline: auto;
 }
 
 .links > * {
@@ -34,7 +36,7 @@
   text-align: left;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 790px) {
   .section {
     padding: var(--section-y) 0;
   }
@@ -43,12 +45,8 @@
     grid-template-columns: repeat(2, max-content);
     column-gap: var(--space-8);
     row-gap: var(--space-6);
-  }
-}
-
-@media (min-width: 1024px) {
-  .links {
-    grid-template-columns: repeat(4, max-content);
-    gap: var(--space-7);
+    width: min(100%, 960px);
+    max-width: none;
+    justify-items: start;
   }
 }

@@ -79,13 +79,11 @@
   background: var(--color-bg-primary);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 790px) {
   .container {
     padding: 0 var(--space-5);
   }
-}
 
-@media (min-width: 1024px) {
   .hero {
     padding: var(--space-7) 0 var(--space-7);
   }

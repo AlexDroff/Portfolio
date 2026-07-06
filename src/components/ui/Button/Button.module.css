@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   min-width: 150px;
   height: 44px;
   padding: 0 18px;
@@ -46,8 +47,8 @@
   border-color: var(--color-brand-accent);
 }
 
-@media (max-width: 420px) {
+@media (min-width: 790px) {
   .button {
-    width: 100%;
+    width: auto;
   }
 }

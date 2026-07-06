@@ -129,7 +129,7 @@
   fill: currentColor;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 790px) {
   .inner {
     min-height: 84px;
   }

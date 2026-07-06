@@ -51,17 +51,25 @@ export function MobileMenu({
           </button>
         </div>
         <nav className={styles.nav} aria-label="Nawigacja mobilna">
-          {cvLink ? (
-            <a href={cvLink.href} onClick={onClose} rel="noopener noreferrer" target="_blank">
-              {cvLink.label}
-            </a>
-          ) : null}
           {navLinks.map((link) => (
             <a href={link.href} key={link.href} onClick={onClose}>
               {link.label}
             </a>
           ))}
         </nav>
+        {cvLink ? (
+          <div className={styles.actions}>
+            <a
+              className={styles.cvLink}
+              href={cvLink.href}
+              onClick={onClose}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {cvLink.label}
+            </a>
+          </div>
+        ) : null}
       </aside>
     </div>
   );

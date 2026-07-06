@@ -27,7 +27,7 @@ export function WorkCategoryCard({ category, href }: WorkCategoryCardProps) {
               src={category.coverImage}
               alt={category.coverAlt}
               fill
-              sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 700px) 50vw, 100vw"
+              sizes="(min-width: 790px) 50vw, 100vw"
             />
           ) : (
             <span className={styles.placeholder} aria-hidden="true" />

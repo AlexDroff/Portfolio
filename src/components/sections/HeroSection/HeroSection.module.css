@@ -1,79 +1,93 @@
 .section {
   display: grid;
   min-width: 0;
-  padding: var(--space-8) 0;
+  padding: var(--space-7) 0 var(--space-9);
   overflow-x: clip;
   color: var(--color-text-primary);
   background: var(--color-bg-primary);
 }
 
 .introShell {
-  display: grid;
+  display: block;
+  width: 100%;
   min-width: 0;
 }
 
 .intro {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   gap: var(--space-6);
-  align-items: center;
+  align-items: stretch;
   min-width: 0;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
-  max-width: 760px;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: none;
   min-width: 0;
+  align-self: stretch;
+  text-align: center;
 }
 
 .content h1 {
   margin: 0;
   color: var(--color-brand-primary);
-  font-size: clamp(var(--font-size-2xl), 7vw, var(--font-size-4xl));
+  font-size: clamp(var(--font-size-2xl), 6vw, var(--font-size-3xl));
   line-height: 1;
   letter-spacing: 0;
   overflow-wrap: anywhere;
 }
 
 .summary {
+  width: 100%;
+  max-width: none;
   margin: 0;
   color: var(--color-text-secondary);
-}
-
-.summary {
-  max-width: 760px;
   line-height: 1.65;
+  text-align: center;
 }
 
 .summary strong {
   display: block;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
-  margin-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
   color: var(--color-text-primary);
-  font-size: clamp(var(--font-size-xl), 4vw, var(--font-size-3xl));
+  font-size: clamp(var(--font-size-lg), 3.6vw, var(--font-size-xl));
   font-weight: 800;
   line-height: 1;
+  text-align: center;
 }
 
 .summaryText {
   display: block;
-  margin-top: var(--space-6);
-  font-size: var(--font-size-lg);
+  margin-top: var(--space-4);
+  font-size: var(--font-size-md);
 }
 
 .actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   width: 100%;
-  max-width: 760px;
+  max-width: none;
+  min-width: 0;
   gap: var(--space-3);
-  justify-content: flex-start;
-  margin-top: var(--space-5);
+  justify-content: stretch;
+  margin-top: var(--space-2);
 }
 
 .actions a {
+  width: 100%;
+  min-height: 56px;
+  height: auto;
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: normal;
   transition: all 0.2s ease;
 }
 
@@ -83,8 +97,10 @@
 }
 
 .photo {
-  width: min(100%, 340px);
-  max-width: 340px;
+  order: -1;
+  align-self: center;
+  width: min(100%, clamp(280px, 86vw, 320px));
+  max-width: 320px;
   overflow: visible;
   border: 0;
   border-radius: 0;
@@ -94,33 +110,25 @@
 .photo img {
   display: block;
   width: 100%;
-  max-width: 340px;
+  max-width: 100%;
   height: auto;
+  margin-inline: auto;
   object-fit: contain;
   object-position: center;
 }
 
-@media (max-width: 520px) {
-  .section {
-    padding: var(--space-7) 0;
-  }
-
-  .actions {
-    display: grid;
-    justify-content: stretch;
-  }
-
-  .photo {
-    width: min(100%, 320px);
-  }
-}
-
-@media (min-width: 900px) {
+@media (min-width: 790px) {
   .section {
     padding: calc(var(--space-9) + var(--space-6)) 0;
   }
 
+  .introShell {
+    display: grid;
+    width: auto;
+  }
+
   .intro {
+    display: grid;
     grid-template-columns: minmax(300px, 0.42fr) minmax(0, 1fr);
     gap: var(--space-8);
     align-items: stretch;
@@ -129,10 +137,12 @@
   .content {
     grid-column: 2;
     grid-row: 1;
+    width: auto;
     max-width: 900px;
     margin-left: var(--space-4);
     align-self: stretch;
     gap: var(--space-7);
+    text-align: left;
   }
 
   .content h1 {
@@ -141,19 +151,53 @@
     white-space: nowrap;
   }
 
+  .summary {
+    max-width: 760px;
+    text-align: left;
+  }
+
   .summary strong {
+    width: fit-content;
+    margin-bottom: var(--space-4);
     font-size: clamp(var(--font-size-xl), 2.45vw, var(--font-size-2xl));
+    text-align: left;
+  }
+
+  .summaryText {
+    margin-top: var(--space-6);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    max-width: 760px;
+    justify-content: flex-start;
+    margin-top: auto;
+  }
+
+  .actions a {
+    width: auto;
+    min-width: 150px;
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
   }
 
   .photo {
     grid-column: 1;
     grid-row: 1;
+    order: 0;
+    align-self: stretch;
     justify-self: start;
     width: min(100%, 340px);
     max-width: 340px;
   }
 
-  .actions {
-    margin-top: auto;
+  .photo img {
+    max-width: 340px;
   }
 }
