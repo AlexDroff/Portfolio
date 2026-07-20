@@ -12,7 +12,7 @@ export function WorkCategoriesSection() {
   return (
     <section className={styles.section} id="prace">
       <Container className={styles.inner}>
-        <SectionHeader title="Portofolio graficzne" />
+        <SectionHeader title="Portfolio graficzne" />
         {publishedCategories.length > 0 ? (
           <div className={styles.grid}>
             {publishedCategories.map((category) => (
